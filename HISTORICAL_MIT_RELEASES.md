@@ -1,4 +1,14 @@
-# Historical MIT releases
+# Historical MIT Releases
+
+This file is retained for historical and licensing reference.
+
+GregyScan continues development based on earlier open-source work from ScanIt / SeliaScan.
+
+The historical release information below belongs to the original ScanIt / SeliaScan project and is preserved only to document its earlier MIT-licensed releases and licensing history.
+
+GregyScan starts its own release history with version **1.0.0**.
+
+---
 
 ScanIt changed to source-visible proprietary terms for new material at the
 license-cutoff commit planned for release as `v1.2.0-beta.2`.
