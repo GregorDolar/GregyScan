@@ -1,3 +1,5 @@
+![GregyScan](docs/images/gregyscan-cover.png)
+
 # GregyScan
 
 **Scan. Save. Done.**
@@ -6,7 +8,7 @@ GregyScan is a free and open-source Android document scanner focused on a simple
 
 The project is currently developed and maintained by **Gregor Dolar**.
 
-GregyScan continues the development of the open-source ScanIt / SeliaScan project. Original authorship, historical licensing information and third-party attribution are preserved in the repository.
+GregyScan continues the development of the open-source **ScanIt / SeliaScan** project. Original authorship, historical licensing information and third-party attribution are preserved in this repository.
 
 ---
 
@@ -16,7 +18,7 @@ GregyScan continues the development of the open-source ScanIt / SeliaScan projec
 
 The current stable release is **v1.0.0**.
 
-**Download:**
+**Download the latest version:**
 
 https://github.com/GregorDolar/GregyScan/releases/latest
 
@@ -34,7 +36,7 @@ Open GregyScan, scan one or more pages, review the result and then save, share o
 
 The goal is a clean workflow:
 
-**Scan → review → save → share**
+**Scan → Review → Save → Share**
 
 ---
 
@@ -139,7 +141,7 @@ Google Play services and Google ML Kit are used for document scanning and some r
 
 Sharing and printing transfer a document only after the user explicitly chooses another application or service.
 
-Optional text-to-speech functionality sends recognized text to the Android speech engine selected on the device. Depending on that engine, speech processing may occur online.
+Optional text-to-speech functionality uses the Android speech engine selected on the device. Depending on that engine, speech processing may occur online.
 
 For more information see:
 
@@ -175,7 +177,6 @@ Current public builds require:
 - `minSdk 29`
 - `targetSdk 36`
 - Google Play services for the ML Kit Document Scanner
-- At least approximately 1.7 GB total device RAM as required by ML Kit Document Scanner
 - Internet connectivity when Google Play services needs to download or update scanner or recognition modules
 
 ---
@@ -184,9 +185,159 @@ Current public builds require:
 
 ```mermaid
 flowchart LR
-    A["Open GregyScan"] --> B["ML Kit scanner"]
-    B --> C["Local working copy"]
+    A["Open GregyScan"] --> B["ML Kit Scanner"]
+    B --> C["Local Working Copy"]
     C --> D["PDF / Gallery"]
     C --> E["Share / Print"]
-    C --> F["Recent scans"]
-    C --> G["Local document tools"]
+    C --> F["Recent Scans"]
+    C --> G["Local Document Tools"]
+```
+
+Scanned documents remain in local working storage while they are being processed.
+
+Saved PDFs and images are written to user-accessible storage selected through Android.
+
+---
+
+## Building GregyScan
+
+The project requires:
+
+- JDK 17
+- Android SDK 36
+
+### Linux / WSL
+
+```bash
+./gradlew :app:testInternalDebugUnitTest
+./gradlew :app:lintGithubRelease
+./gradlew :app:assembleGithubRelease
+```
+
+### Windows
+
+```powershell
+.\gradlew.bat :app:testInternalDebugUnitTest
+.\gradlew.bat :app:lintGithubRelease
+.\gradlew.bat :app:assembleGithubRelease
+```
+
+The public GitHub build uses:
+
+```text
+Application ID:
+com.majkeylab.scanit.github
+```
+
+Release signing uses local signing configuration.
+
+Signing keys, passwords, keystores and other credentials must never be committed to Git.
+
+---
+
+## Technical stack
+
+| Area | Technology |
+|---|---|
+| Language | Kotlin |
+| UI | Jetpack Compose |
+| Design | Material 3 |
+| Scanner | Google ML Kit Document Scanner |
+| OCR | Google ML Kit |
+| Barcode / QR | Google ML Kit |
+| Storage | MediaStore / Storage Access Framework |
+| Sharing | Android Sharesheet / FileProvider |
+| Settings | SharedPreferences |
+| Build system | Gradle |
+
+---
+
+## Known limitations
+
+- Recent scans are temporary working copies, not a permanent document library.
+- Android decides which compatible applications appear in the Sharesheet.
+- Automatic orientation correction requires sufficiently reliable text-line information.
+- Google Play services may need to download ML Kit components before their first use.
+- Visual signatures and stamps do not verify identity, authorization or document integrity.
+- The repository does not contain production signing keys or passwords.
+
+---
+
+## Feedback and bug reports
+
+Bug reports, suggestions and feature requests are welcome:
+
+https://github.com/GregorDolar/GregyScan/issues
+
+When reporting a problem, please include:
+
+- GregyScan version
+- Android version
+- Device model
+- Clear steps to reproduce the issue
+
+Please **never upload private documents, passwords, credentials, API keys or other sensitive personal information** with a bug report.
+
+See also:
+
+[CONTRIBUTING.md](CONTRIBUTING.md)
+
+---
+
+## Support GregyScan
+
+GregyScan is free and open source.
+
+If GregyScan saves you time or makes document scanning easier, you can support its continued development with a coffee:
+
+https://buymeacoffee.com/gregyscan
+
+Support is completely optional and does not unlock features or change support priority.
+
+---
+
+## Maintainer
+
+**Gregor Dolar**
+
+GitHub:  
+https://github.com/GregorDolar
+
+Website:  
+https://gregordolar.com
+
+---
+
+## Project history and attribution
+
+GregyScan continues development based on earlier open-source work from **ScanIt / SeliaScan**.
+
+The transition to GregyScan does not remove or replace the authorship, copyright notices or license rights associated with the original source code.
+
+Historical information and applicable license notices are preserved in this repository.
+
+See:
+
+- [LICENSE](LICENSE)
+- [LICENSES](LICENSES)
+- [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
+- [HISTORICAL_MIT_RELEASES.md](HISTORICAL_MIT_RELEASES.md)
+- [CHANGELOG.md](CHANGELOG.md)
+
+---
+
+## License
+
+GregyScan is distributed under the open-source license terms contained in this repository.
+
+Existing copyright notices and licensing terms covering the original ScanIt / SeliaScan source remain applicable to that code.
+
+Additional GregyScan development is distributed subject to the applicable repository license.
+
+See:
+
+[LICENSE](LICENSE)
+
+---
+
+**GregyScan — Scan. Save. Done.**
