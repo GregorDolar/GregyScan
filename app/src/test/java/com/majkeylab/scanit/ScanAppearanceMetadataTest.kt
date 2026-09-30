@@ -1,0 +1,167 @@
+package com.majkeylab.scanit
+
+import java.io.File
+import java.nio.file.Files
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
+import org.junit.Test
+
+class ScanAppearanceMetadataTest {
+    @Test
+    fun v5MetadataRoundTripsEveryFilterSettingAndExactParent() {
+        val settings =
+            ScanAppearanceSettings(
+                colorMode = ScanColorMode.Grayscale,
+                naturalIntensity = 10,
+                colorIntensity = 140,
+                lightTextIntensity = 25,
+                grayscaleIntensity = 35,
+                blackWhiteIntensity = -5,
+                whiteboardIntensity = 60,
+                shadows = 45,
+            )
+        val encoded =
+            encodeScanAppearanceMetadata(
+                settings,
+                PdfSizeTarget.Mb5,
+                "Scan_origin",
+                parentCacheId = "Scan_parent",
+                parentEntryId = "00000000-0000-0000-0000-000000000001",
+            )
+
+        assertEquals(
+            ScanAppearanceMetadata(
+                appearance =
+                    ScanAppearance(ScanColorMode.Grayscale, intensity = 35, shadows = 45),
+                appearanceSettings =
+                    settings.copy(
+                        colorIntensity = 100,
+                        blackWhiteIntensity = 0,
+                    ),
+                pdfSizeTarget = PdfSizeTarget.Mb5,
+                lineageCacheId = "Scan_origin",
+                parentCacheId = "Scan_parent",
+                parentEntryId = "00000000-0000-0000-0000-000000000001",
+                restoreSettingsOnActivation = true,
+            ),
+            decodeScanAppearanceMetadata(encoded),
+        )
+        assertNull(decodeScanAppearanceMetadata(encoded + "extra\n".toByteArray()))
+        assertNull(
+            decodeScanAppearanceMetadata(
+                encoded.toString(Charsets.US_ASCII)
+                    .replace("derived\nScan_parent\n", "derived\n../parent\n")
+                    .toByteArray(Charsets.US_ASCII),
+            ),
+        )
+    }
+
+    @Test
+    fun v4MetadataMigratesSharedFilterIntensities() {
+        val decoded =
+            decodeScanAppearanceMetadata(
+                (
+                    "scanit-appearance-v4\nwhiteboard\n21\n42\n63\n50\n5_mb\nScan_origin\n" +
+                        "restore\ninitial\n"
+                ).toByteArray(Charsets.US_ASCII),
+            )
+
+        assertEquals(21, decoded?.appearanceSettings?.naturalIntensity)
+        assertEquals(21, decoded?.appearanceSettings?.colorIntensity)
+        assertEquals(21, decoded?.appearanceSettings?.lightTextIntensity)
+        assertEquals(42, decoded?.appearanceSettings?.grayscaleIntensity)
+        assertEquals(63, decoded?.appearanceSettings?.blackWhiteIntensity)
+        assertEquals(63, decoded?.appearanceSettings?.whiteboardIntensity)
+    }
+
+    @Test
+    fun markedRevisionDoesNotAuthorizeRestoringGlobalAppearanceDefaults() {
+        val encoded =
+            encodeScanAppearanceMetadata(
+                ScanAppearanceSettings(colorMode = ScanColorMode.Grayscale),
+                PdfSizeTarget.Mb5,
+                "Scan_origin",
+                parentCacheId = "Scan_parent",
+                parentEntryId = "00000000-0000-0000-0000-000000000001",
+                restoreSettingsOnActivation = false,
+            )
+
+        assertFalse(requireNotNull(decodeScanAppearanceMetadata(encoded)).restoreSettingsOnActivation)
+    }
+
+    @Test
+    fun v5MetadataRoundTripsCustomPdfTarget() {
+        val encoded =
+            encodeScanAppearanceMetadata(
+                ScanAppearanceSettings(),
+                PdfSizeTarget.Custom(37_000),
+                "Scan_origin",
+            )
+
+        assertEquals(
+            PdfSizeTarget.Custom(37_000),
+            decodeScanAppearanceMetadata(encoded)?.pdfSizeTarget,
+        )
+    }
+
+    @Test
+    fun v3MetadataRemainsReadableAndRestoresAppearanceDefaults() {
+        val decoded =
+            decodeScanAppearanceMetadata(
+                (
+                    "scanit-appearance-v3\ngrayscale\n80\n35\n100\n50\n5_mb\nScan_origin\n" +
+                        "derived\nScan_parent\n00000000-0000-0000-0000-000000000001\n"
+                ).toByteArray(Charsets.US_ASCII),
+            )
+
+        assertEquals(ScanColorMode.Grayscale, decoded?.appearanceSettings?.colorMode)
+        assertEquals("Scan_parent", decoded?.parentCacheId)
+        assertEquals(true, decoded?.restoreSettingsOnActivation)
+    }
+
+    @Test
+    fun legacyV2RemainsReadableButCannotAuthorizeAProvisionalCandidate() {
+        val decoded =
+            decodeScanAppearanceMetadata(
+                "scanit-appearance-v2\ncolor\n70\n25\n10_mb\nScan_origin\n"
+                    .toByteArray(Charsets.US_ASCII),
+            )
+
+        assertEquals(ScanAppearance(ScanColorMode.Color, 70, 25), decoded?.appearance)
+        assertEquals(PdfSizeTarget.Mb10, decoded?.pdfSizeTarget)
+        assertEquals("Scan_origin", decoded?.lineageCacheId)
+        assertNull(decoded?.appearanceSettings)
+        assertNull(decoded?.parentCacheId)
+        assertNull(decoded?.parentEntryId)
+    }
+
+    @Test
+    fun writePublishesCompleteMetadataWithoutLeavingTemporaryFile() {
+        val directory = Files.createTempDirectory("scanit-appearance-metadata-").toFile()
+        try {
+            writeScanAppearanceMetadata(
+                directory,
+                ScanAppearanceSettings(),
+                PdfSizeTarget.Mb10,
+                "Scan_origin",
+            )
+
+            assertEquals(
+                ScanAppearanceMetadata(
+                    ScanAppearance(),
+                    ScanAppearanceSettings(),
+                    PdfSizeTarget.Mb10,
+                    "Scan_origin",
+                    parentCacheId = null,
+                    parentEntryId = null,
+                    restoreSettingsOnActivation = true,
+                ),
+                readScanAppearanceMetadata(directory, "Scan_origin"),
+            )
+            assertFalse(File(directory, SCAN_APPEARANCE_TEMP_FILE_NAME).exists())
+        } finally {
+            directory.deleteRecursively()
+        }
+    }
+}

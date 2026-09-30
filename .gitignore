@@ -1,0 +1,39 @@
+.gradle/
+.kotlin/
+.idea/
+.reference/
+build/
+# Local SDK path; keep out of source archives.
+local.properties
+docs/superpowers/
+*.apk
+*.aab
+*-source.zip
+*.jks
+*.keystore
+keystore.properties
+*.iml
+*.hprof
+hs_err_pid*.log
+replay_pid*.log
+.repo_graph/
+
+# Local GregyScan build files
+.docker-home/
+dist/
+gregyscan-*-backup-*/
+resource-backups-*/
+*.jks
+*.keystore
+
+# Secrets / certificates
+.env
+.env.*
+*.p12
+*.pfx
+*.pem
+*.key
+
+# Editor / temporary backups
+*.bak
+*.bmc-backup

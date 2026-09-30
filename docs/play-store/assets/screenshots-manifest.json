@@ -1,0 +1,162 @@
+[
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/01-capture.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 1235827,
+    "sha256": "E77B7811FB87973F69A67751B89E3E85BEB067BD0603830B7BFF7C0F87716FBD",
+    "altText": "SeliaScan detects the edges of an original music practice sheet."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/02-review.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 592550,
+    "sha256": "1B741BC1919A220099A97C982D9C0558EC3BF042893B11D764E495E0F856F602",
+    "altText": "Review, crop, rotate, and filter a scanned music practice sheet."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/03-result.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 336979,
+    "sha256": "578904DECDCF1B15835604E45E17A531D99154983420E0748F47487F542D9125",
+    "altText": "SeliaScan result screen with clear buttons for rescanning, signing, document actions, and sharing."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/04-file-details.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 249762,
+    "sha256": "944C7CC9831C919F19879268D0C6D4D45B18579E09A5369DACAAEAEDFE51DA9D",
+    "altText": "File details with inline PDF and image renaming plus size, format, and location controls."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/05-recent.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 194375,
+    "sha256": "7838797A5C79B9FC68D64CB7E7DE822165BB4CC5832773B00A7B8C52A8061B28",
+    "altText": "Recent scans dashboard with two document previews and a clear new scan button."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/06-sign-stamp.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 399064,
+    "sha256": "6AFF1715CC35C573E261285C2162CFD9D311ED1D87165FA52ADA84067F355A00",
+    "altText": "Signature and stamp editor with direct placement, pinch resize, rotation, drawing, import, and paper scan controls."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/07-actions.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 246747,
+    "sha256": "42FBDD874B4B19BC272ABD086368A76072434434A3EC756AE9B40FB9B80B0021",
+    "altText": "On-device document actions for extracting text and detecting QR codes or barcodes."
+  },
+  {
+    "locale": "en-US",
+    "file": "docs/play-store/assets/en-US/phone/08-pdf-size.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 196414,
+    "sha256": "E698E692D1A50977EFF8F7FFF0678F24F88D585BFB3AE21669EF70666A9E2975",
+    "altText": "Current-file PDF size options for Original, 200 KB, 500 KB, 1 MB, larger measured targets, and Custom."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/01-capture.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 1237671,
+    "sha256": "F6BCF4DA90609883EBE04BFF90063EB4ED040DD872C1469EFC079E16FAB459AE",
+    "altText": "SeliaScan rozpoznává okraje původního notového cvičení."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/02-review.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 498793,
+    "sha256": "C518A486740CC427B05C1E9BFA55B79C9A8DC753B89887E25DE1EA5EDC0CFDF0",
+    "altText": "Kontrola, ořez, otočení a filtry naskenovaného notového cvičení."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/03-result.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 351173,
+    "sha256": "E83BA7FF03A36CACB4F08809F2B42339889C3CB4FA003F58F8A01924348E6747",
+    "altText": "Výsledek skenu s jasnými tlačítky pro nový sken, podpis, akce dokumentu a sdílení."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/04-file-details.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 234948,
+    "sha256": "565BCFC5A829072C9ED9663FD0D5A3C57D1EAC8E70B5026D7237EE14BB0BA76D",
+    "altText": "Podrobnosti souborů s přejmenováním PDF i obrázků a ovládáním velikosti, formátu a umístění."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/05-recent.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 199413,
+    "sha256": "47F5DD95FC1AF457370C824E4269C2CB61A7FAE669548EEF7BBD3F4CE574097D",
+    "altText": "Přehled nedávných skenů se dvěma náhledy a jasným tlačítkem pro nový sken."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/06-sign-stamp.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 415057,
+    "sha256": "B0A5E972BD9C8BE3E670A4E89553AFB143B1ABB99A466B7CF1B8C87654762AD1",
+    "altText": "Editor podpisu a razítka s přímým umístěním, změnou velikosti, otočením, kreslením a importem."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/07-actions.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 276544,
+    "sha256": "6A6A5EBB2FD72219799ABA25000EDE6BA59634453907C3D565A9A3D6A14FC701",
+    "altText": "Akce dokumentu v zařízení pro extrakci textu a detekci QR nebo čárových kódů."
+  },
+  {
+    "locale": "cs-CZ",
+    "file": "docs/play-store/assets/cs-CZ/phone/08-pdf-size.png",
+    "width": 1080,
+    "height": 1920,
+    "mode": "RGB",
+    "bytes": 208734,
+    "sha256": "182952199FCD7F3A6CBB5CA9A3A2450632964AC9C593FB785A9704372F8EB9D2",
+    "altText": "Volby velikosti aktuálního PDF: Původní, 200 KB, 500 KB, 1 MB, větší měřené cíle a Vlastní."
+  }
+]
