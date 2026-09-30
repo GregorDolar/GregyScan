@@ -123,6 +123,15 @@ main {
   border-bottom: 1px solid var(--line);
 }
 
+.hero-cover {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 2rem 0 2rem 0;
+  border-radius: 12px;
+}
+
 .eyebrow {
   margin: 0 0 1rem;
   font-size: 0.84rem;
