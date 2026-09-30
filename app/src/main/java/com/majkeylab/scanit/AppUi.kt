@@ -136,9 +136,9 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 
 private const val PRIVACY_POLICY_URL =
-    "https://majkey25.github.io/ScanIt/privacy.html"
+    "https://gregordolar.github.io/GregyScan/privacy.html"
 private const val THIRD_PARTY_NOTICES_URL =
-    "https://majkey25.github.io/ScanIt/third-party-notices.txt"
+    "https://gregordolar.github.io/GregyScan/third-party-notices.txt"
 internal const val SUPPORT_URL = "https://buymeacoffee.com/gregyscan"
 
 private val LightColorScheme =
