@@ -20,6 +20,8 @@ Initial public release of GregyScan under current maintenance by **Gregor Dolar*
 
 GregyScan continues development based on earlier open-source work from **ScanIt / SeliaScan**.
 
-Historical release information below is retained for attribution and project history.
+Earlier development history belongs to the original ScanIt / SeliaScan project and is not duplicated here.
+
+GregyScan starts its own release history with version **1.0.0**.
 
 ---
