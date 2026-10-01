@@ -139,6 +139,7 @@ private const val PRIVACY_POLICY_URL =
     "https://gregordolar.github.io/GregyScan/privacy.html"
 private const val THIRD_PARTY_NOTICES_URL =
     "https://gregordolar.github.io/GregyScan/third-party-notices.txt"
+private const val SOURCE_CODE_URL = "https://github.com/GregorDolar/GregyScan"
 internal const val SUPPORT_URL = "https://buymeacoffee.com/gregyscan"
 
 private val LightColorScheme =
@@ -3171,6 +3172,11 @@ private fun RecentScreen(
                     onClick = onNewScan,
                     enabled = !state.deletionInProgress,
                     modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp),
+                    colors =
+                        ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFF4082D2),
+                            contentColor = Color.White,
+                        ),
                 ) {
                     Text(stringResource(R.string.new_scan))
                 }
@@ -4016,7 +4022,7 @@ private fun SettingsScreen(
                     border = BorderStroke(1.dp, Color(0xFF111111)),
                     colors =
                         ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFFFFDD00),
+                            containerColor = Color(0xFF18D5A0),
                             contentColor = Color(0xFF111111),
                         ),
                 ) {
@@ -4091,6 +4097,12 @@ private fun SettingsScreen(
                                 modifier = Modifier.fillMaxWidth(),
                             ) {
                                 Text(stringResource(R.string.third_party_notices))
+                            }
+                            TextButton(
+                                onClick = { uriHandler.openUri(SOURCE_CODE_URL) },
+                                modifier = Modifier.fillMaxWidth(),
+                            ) {
+                                Text(stringResource(R.string.source_code))
                             }
                         }
                     }
