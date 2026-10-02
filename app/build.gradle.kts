@@ -32,7 +32,7 @@ System.getenv("GREGYSCAN_STORE_PASSWORD")?.let { password ->
 }
 
 android {
-    namespace = "com.majkeylab.scanit"
+    namespace = "com.gregordolar.gregyscan"
     compileSdk = 37
 
     defaultConfig {

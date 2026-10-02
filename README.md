@@ -226,7 +226,7 @@ The public GitHub build uses:
 
 ```text
 Application ID:
-com.majkeylab.scanit.github
+com.gregordolar.gregyscan.github
 ```
 
 Release signing uses local signing configuration.
