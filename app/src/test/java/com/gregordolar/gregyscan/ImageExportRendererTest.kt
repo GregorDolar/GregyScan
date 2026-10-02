@@ -312,7 +312,7 @@ class ImageExportRendererTest {
 
     private fun assertNoImageExportStagingFiles() {
         assertTrue(
-            temporaryFolder.root.listFiles().orEmpty().none { it.name.startsWith(".scanit-image-") },
+            temporaryFolder.root.listFiles().orEmpty().none { it.name.startsWith(".gregyscan-image-") },
         )
     }
 }

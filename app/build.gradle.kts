@@ -7,13 +7,13 @@ plugins {
 }
 
 val configuredKeystorePropertiesFile =
-    providers.gradleProperty("seliaScanKeystoreProperties").orNull?.let { path ->
+    providers.gradleProperty("gregyScanKeystoreProperties").orNull?.let { path ->
         rootProject.file(path).also { file ->
-            require(file.isFile) { "Configured SeliaScan keystore properties file is missing" }
+            require(file.isFile) { "Configured GregyScan keystore properties file is missing" }
         }
     }
 val externalKeystorePropertiesFile =
-    File(System.getProperty("user.home"), ".android/scanit/keystore.properties")
+    File(System.getProperty("user.home"), ".android/gregyscan/keystore.properties")
 val keystorePropertiesFile =
     configuredKeystorePropertiesFile
         ?: externalKeystorePropertiesFile.takeIf(File::isFile)
@@ -40,8 +40,8 @@ android {
         minSdk = 29
         targetSdk = 36
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        versionCode = 42
-        versionName = "1.0.0"
+        versionCode = 43
+        versionName = "1.0.1"
     }
 
     signingConfigs {

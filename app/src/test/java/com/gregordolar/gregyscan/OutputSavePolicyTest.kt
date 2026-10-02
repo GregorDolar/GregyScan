@@ -48,7 +48,7 @@ class OutputSavePolicyTest {
 
     @Test
     fun fileDetailsUseExactCachedImageByteTotal() {
-        val root = Files.createTempDirectory("scanit-file-details-").toFile()
+        val root = Files.createTempDirectory("gregyscan-file-details-").toFile()
         try {
             val first = File(root, "page-1.jpg").apply { writeBytes(ByteArray(3)) }
             val second = File(root, "page-2.jpg").apply { writeBytes(ByteArray(5)) }

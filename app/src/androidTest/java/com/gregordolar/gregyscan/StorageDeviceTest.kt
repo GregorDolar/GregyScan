@@ -18,20 +18,20 @@ import org.junit.Test
 class StorageDeviceTest {
     @Test
     fun saveReopenRenameAndFormatPreserveExactOutputs() = withScan { storage, cached ->
-        val pdf = storage.savePdf(cached, "SeliaScanQA", null)
-        val images = storage.saveImages(cached, "SeliaScanQA")
+        val pdf = storage.savePdf(cached, "GregyScanQA", null)
+        val images = storage.saveImages(cached, "GregyScanQA")
         assertEquals(1, images.size)
-        assertEquals(pdf.uri, storage.savePdf(cached, "SeliaScanQA", null).uri)
-        assertEquals(images, storage.saveImages(cached, "SeliaScanQA"))
+        assertEquals(pdf.uri, storage.savePdf(cached, "GregyScanQA", null).uri)
+        assertEquals(images, storage.saveImages(cached, "GregyScanQA"))
 
-        val renamed = storage.renamePdfOutput(cached, "SeliaScanQA-renamed")
-        assertEquals("SeliaScanQA-renamed.pdf", renamed.scan.savedPdfDisplayName)
+        val renamed = storage.renamePdfOutput(cached, "GregyScanQA-renamed")
+        assertEquals("GregyScanQA-renamed.pdf", renamed.scan.savedPdfDisplayName)
         val png = storage.replaceImageOutputs(
             cached,
             ImageExportOptions(ImageExportFormat.Png, ImageSizePreset.Small),
         )
         assertEquals("image/png", png.scan.savedImages.single().mimeType)
-        assertEquals(png.scan.galleryPages, storage.saveImages(cached, "SeliaScanQA"))
+        assertEquals(png.scan.galleryPages, storage.saveImages(cached, "GregyScanQA"))
         val reopened = checkNotNull(storage.openSavedScan(cached.baseName))
         assertEquals("image/png", reopened.savedImages.single().mimeType)
         assertTrue(reopened.savedPdfDeleteVerified)

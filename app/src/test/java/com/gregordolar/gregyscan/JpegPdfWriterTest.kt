@@ -29,7 +29,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun writesJpegBytesIntoAParseableDctImageObject() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf")
@@ -54,7 +54,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun downsampledImageKeepsOriginalPhysicalPageSize() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-physical").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-physical").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf")
@@ -83,7 +83,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun acceptsStandardGoogleScannerPageSlightlyAboveTwelveMegapixels() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-google-page").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-google-page").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf")
@@ -101,7 +101,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun acceptsHuaweiCameraPageAboveThirtySixMegapixels() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-huawei-page").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-huawei-page").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf")
@@ -119,7 +119,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun acceptsTwoHundredMegapixelCameraPage() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-200mp-page").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-200mp-page").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf")
@@ -137,7 +137,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun rejectsPageAboveTheCameraSafetyBound() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-large-page").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-large-page").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf")
@@ -156,7 +156,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun preservesExistingDestinationAndCleansStagingFile() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-existing").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-existing").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(JPEG_BYTES) }
             val pdf = File(root, "scan.pdf").apply { writeText("sentinel") }
@@ -166,7 +166,7 @@ class JpegPdfWriterTest {
             }
 
             assertEquals("sentinel", pdf.readText())
-            assertEquals(emptyList<String>(), root.listFiles()!!.map(File::getName).filter { it.startsWith(".scanit-pdf-") })
+            assertEquals(emptyList<String>(), root.listFiles()!!.map(File::getName).filter { it.startsWith(".gregyscan-pdf-") })
         } finally {
             assertTrue(root.deleteRecursively())
         }
@@ -174,7 +174,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun atomicPublicationMovesTheStagingFileWithoutCreatingAHardLink() {
-        val root = Files.createTempDirectory("scanit-pdf-publication-move").toFile()
+        val root = Files.createTempDirectory("gregyscan-pdf-publication-move").toFile()
         try {
             val staging = File(root, "staging.part").apply { writeText("complete") }
             val target = File(root, "scan.pdf")
@@ -190,7 +190,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun cancellationDuringJpegCopyDoesNotPublishOrLeaveStaging() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-cancel").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-cancel").toFile()
         try {
             val jpeg = File(root, "page.jpg").apply { writeBytes(ByteArray(32_000) { 0x41 }) }
             val pdf = File(root, "scan.pdf")
@@ -206,7 +206,7 @@ class JpegPdfWriterTest {
 
             assertTrue(checks >= 5)
             assertFalse(pdf.exists())
-            assertTrue(root.listFiles()!!.none { it.name.startsWith(".scanit-pdf-") })
+            assertTrue(root.listFiles()!!.none { it.name.startsWith(".gregyscan-pdf-") })
         } finally {
             assertTrue(root.deleteRecursively())
         }
@@ -214,7 +214,7 @@ class JpegPdfWriterTest {
 
     @Test
     fun rejectsMissingEmptyAndInvalidPagesBeforeCreatingOutput() {
-        val root = Files.createTempDirectory("scanit-jpeg-pdf-invalid").toFile()
+        val root = Files.createTempDirectory("gregyscan-jpeg-pdf-invalid").toFile()
         try {
             val empty = File(root, "empty.jpg").apply { createNewFile() }
             val output = File(root, "scan.pdf")

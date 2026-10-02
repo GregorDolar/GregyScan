@@ -343,7 +343,7 @@ function Get-Bundletool {
 
     $version = "1.18.3"
     $expectedHash = "A099CFA1543F55593BC2ED16A70A7C67FE54B1747BB7301F37FDFD6D91028E29"
-    $cacheRoot = Join-Path ([IO.Path]::GetTempPath()) "scanit-release-tools"
+    $cacheRoot = Join-Path ([IO.Path]::GetTempPath()) "gregyscan-release-tools"
     $cachedTool = Join-Path $cacheRoot "bundletool-all-$version.jar"
     $validCache =
         (Test-Path -LiteralPath $cachedTool -PathType Leaf) -and

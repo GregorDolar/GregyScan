@@ -430,7 +430,7 @@ internal fun publishImageExportAtomically(
 ) {
     val target = requireImageExportDestination(destination)
     val parent = requireNotNull(target.parentFile)
-    val staging = Files.createTempFile(parent.toPath(), ".scanit-image-", ".part").toFile()
+    val staging = Files.createTempFile(parent.toPath(), ".gregyscan-image-", ".part").toFile()
     var failure: Throwable? = null
     try {
         throwIfImageExportCancelled(isCancelled)

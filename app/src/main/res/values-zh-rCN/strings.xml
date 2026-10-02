@@ -130,8 +130,8 @@
     <string name="app_version">版本 %1$s</string>
     <string name="expand_app_info">显示应用信息</string>
     <string name="collapse_app_info">隐藏应用信息</string>
-    <string name="support_scanit">支持此应用 → Buy Me a Coffee</string>
-    <string name="support_scanit_notice">正在打开 Buy Me a Coffee。</string>
+    <string name="support_gregyscan">支持此应用 → Buy Me a Coffee</string>
+    <string name="support_gregyscan_notice">正在打开 Buy Me a Coffee。</string>
     <string name="settings_save_failed">无法保存设置。</string>
     <string name="apply_appearance">应用</string>
     <string name="pdf_size">PDF 大小</string>
@@ -174,7 +174,7 @@
     <string name="scanner_unexpected_error">扫描意外结束。请重试。</string>
     <string name="pdf_tree_release_warning">无法释放之前文件夹的权限。</string>
     <string name="opening_scanner">正在打开扫描器…</string>
-    <string name="starting_scanit">正在打开 GregyScan…</string>
+    <string name="starting_gregyscan">正在打开 GregyScan…</string>
     <string name="saving_document">正在保存文档…</string>
     <string name="images_save_failed">无法将图像保存到图库。文档仍可分享。</string>
     <string name="pdf_save_failed">无法保存 PDF。文档仍可分享。</string>

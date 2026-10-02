@@ -10,7 +10,8 @@ private const val MAX_ALBUM_NAME_LENGTH = 64
 private const val PREFERENCES_NAME = "settings"
 private const val KEY_SAVE_PDF = "save_pdf"
 private const val KEY_SAVE_IMAGES = "save_images"
-private const val KEY_ALBUM_NAME = "album_name_scanit"
+private const val KEY_ALBUM_NAME = "album_name_gregyscan"
+private const val LEGACY_KEY_ALBUM_NAME = "album_name_scanit"
 private const val KEY_MULTIPAGE = "multipage"
 private const val KEY_ALLOW_GALLERY = "allow_gallery"
 private const val KEY_EMAIL_SUBJECT = "email_subject"
@@ -185,8 +186,10 @@ internal class SettingsStore(
             },
             albumName = normalizeAlbumName(
                 readPreferenceOrDefault(defaults.albumName) {
-                    preferences.getString(KEY_ALBUM_NAME, defaults.albumName)
-                        ?: defaults.albumName
+                    preferences.getString(
+                        if (preferences.contains(KEY_ALBUM_NAME)) KEY_ALBUM_NAME else LEGACY_KEY_ALBUM_NAME,
+                        defaults.albumName,
+                    ) ?: defaults.albumName
                 },
             ),
             multipage = readPreferenceOrDefault(defaults.multipage) {
@@ -594,6 +597,7 @@ private fun SharedPreferences.Editor.putSettings(
     putBoolean(KEY_SAVE_PDF, settings.savePdf)
         .putBoolean(KEY_SAVE_IMAGES, settings.saveImages)
         .putString(KEY_ALBUM_NAME, normalizeAlbumName(settings.albumName))
+        .remove(LEGACY_KEY_ALBUM_NAME)
         .putBoolean(KEY_MULTIPAGE, settings.multipage)
         .putBoolean(KEY_ALLOW_GALLERY, settings.allowGallery)
         .putString(KEY_EMAIL_SUBJECT, settings.emailSubject)

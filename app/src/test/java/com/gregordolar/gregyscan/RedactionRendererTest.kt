@@ -120,7 +120,7 @@ class RedactionRendererTest {
         assertEquals("old", destination.readText())
         assertTrue(
             temporaryFolder.root.listFiles().orEmpty().none {
-                it.name.startsWith(".scanit-image-")
+                it.name.startsWith(".gregyscan-image-")
             },
         )
     }

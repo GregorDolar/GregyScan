@@ -133,8 +133,8 @@
     <string name="app_version">Verze %1$s</string>
     <string name="expand_app_info">Zobrazit informace o aplikaci</string>
     <string name="collapse_app_info">Skrýt informace o aplikaci</string>
-    <string name="support_scanit">Podpořit tuto aplikaci → Buy Me a Coffee</string>
-    <string name="support_scanit_notice">Otevírá se Buy Me a Coffee.</string>
+    <string name="support_gregyscan">Podpořit tuto aplikaci → Buy Me a Coffee</string>
+    <string name="support_gregyscan_notice">Otevírá se Buy Me a Coffee.</string>
     <string name="settings_save_failed">Nastavení se nepodařilo uložit.</string>
     <string name="apply_appearance">Použít</string>
     <string name="pdf_size">Velikost PDF</string>
@@ -179,7 +179,7 @@
     <string name="scanner_unexpected_error">Skenování skončilo neočekávaně. Zkuste to znovu.</string>
     <string name="pdf_tree_release_warning">Původní oprávnění ke složce se nepodařilo uvolnit.</string>
     <string name="opening_scanner">Otevírám skener…</string>
-    <string name="starting_scanit">Otevírám GregyScan…</string>
+    <string name="starting_gregyscan">Otevírám GregyScan…</string>
     <string name="saving_document">Dokument se ukládá…</string>
     <string name="images_save_failed">Obrázky se nepodařilo uložit do Galerie. Dokument lze stále odeslat.</string>
     <string name="pdf_save_failed">PDF se nepodařilo uložit. Dokument lze stále odeslat.</string>

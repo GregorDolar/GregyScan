@@ -735,7 +735,7 @@ internal fun initialScreenState(route: RestoredRoute?): ScreenState =
     when (route) {
         null ->
             ScreenState.Processing(
-                UiMessage(R.string.starting_scanit),
+                UiMessage(R.string.starting_gregyscan),
                 canNavigateBack = false,
             )
         RestoredRoute.Scanner -> ScreenState.Ready

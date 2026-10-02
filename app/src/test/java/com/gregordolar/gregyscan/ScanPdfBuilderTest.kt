@@ -75,7 +75,7 @@ class ScanPdfBuilderTest {
                     val buildDirectory =
                         checkNotNull(
                             directory.listFiles()?.singleOrNull {
-                                it.isDirectory && it.name.startsWith(".scanit-pdf-build-")
+                                it.isDirectory && it.name.startsWith(".gregyscan-pdf-build-")
                             },
                         )
                     liveProfileCounts +=
@@ -224,7 +224,7 @@ class ScanPdfBuilderTest {
             } catch (_: CancellationException) {}
 
             assertFalse(output.exists())
-            assertTrue(directory.listFiles()?.none { it.name.startsWith(".scanit-pdf-build-") } == true)
+            assertTrue(directory.listFiles()?.none { it.name.startsWith(".gregyscan-pdf-build-") } == true)
         }
 
     @Test
@@ -252,7 +252,7 @@ class ScanPdfBuilderTest {
 
             assertEquals(1, rendered)
             assertFalse(output.exists())
-            assertTrue(directory.listFiles()?.none { it.name.startsWith(".scanit-pdf-build-") } == true)
+            assertTrue(directory.listFiles()?.none { it.name.startsWith(".gregyscan-pdf-build-") } == true)
         }
 
     private fun fakePage(
@@ -294,7 +294,7 @@ class ScanPdfBuilderTest {
         )
 
     private inline fun withTempDirectory(block: (File) -> Unit) {
-        val directory = Files.createTempDirectory("scanit-pdf-builder-test-").toFile()
+        val directory = Files.createTempDirectory("gregyscan-pdf-builder-test-").toFile()
         try {
             block(directory)
         } finally {

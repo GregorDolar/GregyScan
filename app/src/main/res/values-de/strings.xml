@@ -131,8 +131,8 @@
     <string name="app_version">Version %1$s</string>
     <string name="expand_app_info">App-Informationen anzeigen</string>
     <string name="collapse_app_info">App-Informationen ausblenden</string>
-    <string name="support_scanit">Diese App unterstützen → Buy Me a Coffee</string>
-    <string name="support_scanit_notice">Buy Me a Coffee wird geöffnet.</string>
+    <string name="support_gregyscan">Diese App unterstützen → Buy Me a Coffee</string>
+    <string name="support_gregyscan_notice">Buy Me a Coffee wird geöffnet.</string>
     <string name="settings_save_failed">Einstellungen konnten nicht gespeichert werden.</string>
     <string name="apply_appearance">Anwenden</string>
     <string name="pdf_size">PDF-Größe</string>
@@ -175,7 +175,7 @@
     <string name="scanner_unexpected_error">Der Scan wurde unerwartet beendet. Erneut versuchen.</string>
     <string name="pdf_tree_release_warning">Die Berechtigung für den vorherigen Ordner konnte nicht aufgehoben werden.</string>
     <string name="opening_scanner">Scanner wird geöffnet…</string>
-    <string name="starting_scanit">GregyScan wird geöffnet…</string>
+    <string name="starting_gregyscan">GregyScan wird geöffnet…</string>
     <string name="saving_document">Dokument wird gespeichert…</string>
     <string name="images_save_failed">Bilder konnten nicht in der Galerie gespeichert werden. Das Dokument kann weiterhin geteilt werden.</string>
     <string name="pdf_save_failed">Die PDF konnte nicht gespeichert werden. Das Dokument kann weiterhin geteilt werden.</string>

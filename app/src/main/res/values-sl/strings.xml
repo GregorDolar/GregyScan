@@ -133,8 +133,8 @@
     <string name="app_version">Različica %1$s</string>
     <string name="expand_app_info">Pokaži podatke o aplikaciji</string>
     <string name="collapse_app_info">Skrij podatke o aplikaciji</string>
-    <string name="support_scanit">Podpri razvoj GregyScana ☕</string>
-    <string name="support_scanit_notice">Odpiranje strani Buy Me a Coffee.</string>
+    <string name="support_gregyscan">Podpri razvoj GregyScana ☕</string>
+    <string name="support_gregyscan_notice">Odpiranje strani Buy Me a Coffee.</string>
     <string name="settings_save_failed">Nastavitev ni bilo mogoče shraniti.</string>
     <string name="apply_appearance">Uporabi</string>
     <string name="pdf_size">Velikost PDF-ja</string>
@@ -177,7 +177,7 @@
     <string name="scanner_unexpected_error">Skeniranje se je nepričakovano končalo. Poskusi znova.</string>
     <string name="pdf_tree_release_warning">Prejšnjega dovoljenja za dostop do mape ni bilo mogoče sprostiti.</string>
     <string name="opening_scanner">Odpiranje skenerja …</string>
-    <string name="starting_scanit">Odpiranje aplikacije GregyScan …</string>
+    <string name="starting_gregyscan">Odpiranje aplikacije GregyScan …</string>
     <string name="saving_document">Shranjevanje dokumenta …</string>
     <string name="images_save_failed">Slik ni bilo mogoče shraniti v galerijo. Dokument lahko še vedno deliš.</string>
     <string name="pdf_save_failed">PDF-ja ni bilo mogoče shraniti. Dokument lahko še vedno deliš.</string>

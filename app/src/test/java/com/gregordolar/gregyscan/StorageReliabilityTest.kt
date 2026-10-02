@@ -12,7 +12,7 @@ import org.junit.Test
 class StorageReliabilityTest {
     @Test
     fun providerRenamedOutputBecomesTheAuthoritativeCrashMarkerIdentity() {
-        val directory = Files.createTempDirectory("scanit-provider-name").toFile()
+        val directory = Files.createTempDirectory("gregyscan-provider-name").toFile()
         val treeUri = "content://documents/tree/root"
         val outputUri = "content://documents/tree/root/document/scan-1"
         val requested =
@@ -109,7 +109,7 @@ class StorageReliabilityTest {
 
     @Test
     fun copiedCachePagesAreByteExactAndDurablySynchronized() {
-        val directory = Files.createTempDirectory("scanit-derived-copy").toFile()
+        val directory = Files.createTempDirectory("gregyscan-derived-copy").toFile()
         try {
             val bytes = ByteArray(32_000) { (it % 251).toByte() }
             val source = File(directory, "source.jpg").apply { writeBytes(bytes) }

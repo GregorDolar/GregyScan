@@ -31,7 +31,7 @@ internal object JpegPdfWriter {
         val parent = requireNotNull(target.parentFile) { "PDF destination must have a parent" }
         require(parent.isDirectory) { "PDF destination directory does not exist" }
         require(!target.exists()) { "PDF destination already exists" }
-        val staging = Files.createTempFile(parent.toPath(), ".scanit-pdf-", ".part")
+        val staging = Files.createTempFile(parent.toPath(), ".gregyscan-pdf-", ".part")
         var failure: Throwable? = null
         try {
             FileOutputStream(staging.toFile()).use { file ->

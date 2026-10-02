@@ -97,7 +97,7 @@ class PdfSizePolicyTest {
     }
 
     @Test
-    fun googleScannerOutputBypassesScanItEffects() {
+    fun googleScannerOutputBypassesGregyScanEffects() {
         assertEquals(
             ScanAppearance(ScanColorMode.Natural, intensity = 0, shadows = 0),
             googleScannerAppearanceSettings().selected(),

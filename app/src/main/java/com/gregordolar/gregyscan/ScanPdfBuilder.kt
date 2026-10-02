@@ -38,7 +38,7 @@ internal fun buildScanPdf(
     require(parent.isDirectory) { "PDF destination directory does not exist" }
     require(!destination.exists()) { "PDF destination already exists" }
     val workingDirectory =
-        Files.createTempDirectory(parent.toPath(), ".scanit-pdf-build-").toFile()
+        Files.createTempDirectory(parent.toPath(), ".gregyscan-pdf-build-").toFile()
     var publicationStaging: Path? = null
     var failure: Throwable? = null
     try {
@@ -163,7 +163,7 @@ private fun writeBitonalCandidate(
 }
 
 private fun createPdfPublicationStaging(parent: File, candidate: File): Path {
-    val staging = Files.createTempFile(parent.toPath(), ".scanit-pdf-ready-", ".part")
+    val staging = Files.createTempFile(parent.toPath(), ".gregyscan-pdf-ready-", ".part")
     try {
         Files.delete(staging)
         publishStagedFileNoReplace(candidate.toPath(), staging)

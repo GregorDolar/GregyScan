@@ -196,7 +196,7 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
         setContent {
             val state by viewModel.state.collectAsState()
             val settings by viewModel.settings.collectAsState()
-            ScanItApp(
+            GregyScanApp(
                 state = state,
                 settings = settings,
                 language = currentAppLanguage(),
@@ -683,7 +683,7 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
                     text,
                     TextToSpeech.QUEUE_FLUSH,
                     null,
-                    "scanit_document",
+                    "gregyscan_document",
                 )
             } catch (_: RuntimeException) {
                 TextToSpeech.ERROR

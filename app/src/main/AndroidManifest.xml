@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:localeConfig="@xml/locales_config"
         android:roundIcon="@mipmap/ic_launcher"
-        android:theme="@style/Theme.ScanIt">
+        android:theme="@style/Theme.GregyScan">
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
             android:value="document_ui,ocr,ocr_chinese,barcode,face" />

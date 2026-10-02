@@ -383,7 +383,7 @@ class OutputMetadataTest {
 
     @Test
     fun fingerprintReadsExactlyTheExpectedBytes() {
-        val bytes = "ScanIt".toByteArray()
+        val bytes = "GregyScan".toByteArray()
         val fingerprint = readOutputFingerprint(ByteArrayInputStream(bytes), bytes.size.toLong())
 
         assertEquals(bytes.size.toLong(), fingerprint.byteLength)

@@ -159,7 +159,7 @@ class UiAccessibilityContractTest {
 
         notices.forEach { (directory, notice) ->
             val strings = source("app/src/main/res/$directory/strings.xml")
-            assertTrue(strings.contains("<string name=\"support_scanit_notice\">$notice</string>"))
+            assertTrue(strings.contains("<string name=\"support_gregyscan_notice\">$notice</string>"))
         }
     }
 

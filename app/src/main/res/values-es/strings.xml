@@ -132,8 +132,8 @@
     <string name="app_version">Versión %1$s</string>
     <string name="expand_app_info">Mostrar información de la aplicación</string>
     <string name="collapse_app_info">Ocultar información de la aplicación</string>
-    <string name="support_scanit">Apoya esta aplicación → Buy Me a Coffee</string>
-    <string name="support_scanit_notice">Abriendo Buy Me a Coffee.</string>
+    <string name="support_gregyscan">Apoya esta aplicación → Buy Me a Coffee</string>
+    <string name="support_gregyscan_notice">Abriendo Buy Me a Coffee.</string>
     <string name="settings_save_failed">No se pudieron guardar los ajustes.</string>
     <string name="apply_appearance">Aplicar</string>
     <string name="pdf_size">Tamaño del PDF</string>
@@ -176,7 +176,7 @@
     <string name="scanner_unexpected_error">El escaneo terminó de forma inesperada. Reinténtalo.</string>
     <string name="pdf_tree_release_warning">No se pudo liberar el permiso de la carpeta anterior.</string>
     <string name="opening_scanner">Abriendo escáner…</string>
-    <string name="starting_scanit">Abriendo GregyScan…</string>
+    <string name="starting_gregyscan">Abriendo GregyScan…</string>
     <string name="saving_document">Guardando documento…</string>
     <string name="images_save_failed">No se pudieron guardar las imágenes en la Galería. El documento aún se puede compartir.</string>
     <string name="pdf_save_failed">No se pudo guardar el PDF. El documento aún se puede compartir.</string>

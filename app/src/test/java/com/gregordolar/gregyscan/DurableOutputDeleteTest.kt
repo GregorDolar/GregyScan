@@ -19,7 +19,7 @@ import org.junit.Test
 class DurableOutputDeleteTest {
     @Test
     fun imageLocationReplacementCopiesExactBytesAndPreservesUnknownPresetAndPdfState() {
-        val directory = Files.createTempDirectory("scanit-image-relocation-").toFile()
+        val directory = Files.createTempDirectory("gregyscan-image-relocation-").toFile()
         try {
             val bytes = byteArrayOf(0xFF.toByte(), 0xD8.toByte(), 1, 2, 3, 0xFF.toByte(), 0xD9.toByte())
             val fingerprint = readOutputFingerprint(ByteArrayInputStream(bytes), bytes.size.toLong())

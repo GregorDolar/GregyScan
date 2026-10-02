@@ -80,7 +80,7 @@ internal object ScanAppearanceRenderer {
             applyScanAppearance(bitmap, normalizedAppearance, isCancelled)
             throwIfCancelled(isCancelled)
 
-            staging = Files.createTempFile(parent.toPath(), ".scanit-render-", ".jpg.tmp").toFile()
+            staging = Files.createTempFile(parent.toPath(), ".gregyscan-render-", ".jpg.tmp").toFile()
             FileOutputStream(staging).use { output ->
                 if (!bitmap.compress(Bitmap.CompressFormat.JPEG, JPEG_QUALITY, output)) {
                     throw IOException("JPEG encoder rejected the rendered bitmap")

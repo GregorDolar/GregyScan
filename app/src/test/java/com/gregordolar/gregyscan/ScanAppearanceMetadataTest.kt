@@ -138,7 +138,7 @@ class ScanAppearanceMetadataTest {
 
     @Test
     fun writePublishesCompleteMetadataWithoutLeavingTemporaryFile() {
-        val directory = Files.createTempDirectory("scanit-appearance-metadata-").toFile()
+        val directory = Files.createTempDirectory("gregyscan-appearance-metadata-").toFile()
         try {
             writeScanAppearanceMetadata(
                 directory,

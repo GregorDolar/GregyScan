@@ -901,7 +901,7 @@ class DocumentActionsTest {
 
     @Test
     fun structuredBookmarkDisplaysRawPayloadButOpensTypedUrl() {
-        val rawValue = "MEBKM:TITLE:ScanIt;URL:https://example.com/document;;"
+        val rawValue = "MEBKM:TITLE:GregyScan;URL:https://example.com/document;;"
         val typedUrl = "https://example.com/document"
 
         assertEquals(
@@ -912,7 +912,7 @@ class DocumentActionsTest {
             ),
             validatedDetectedCode(
                 rawValue = rawValue,
-                displayValue = "ScanIt",
+                displayValue = "GregyScan",
                 rawBytes = rawValue.toByteArray(StandardCharsets.UTF_8),
                 isQrCode = true,
                 typedUrl = typedUrl,
@@ -1025,7 +1025,7 @@ class DocumentActionsTest {
 
     @Test
     fun providerTextExportTruncatesExistingContentAndMapsFailure() {
-        val destination = File.createTempFile("scanit-text-export", ".txt")
+        val destination = File.createTempFile("gregyscan-text-export", ".txt")
         try {
             destination.writeText("existing content that is longer than the replacement")
             var openedMode: String? = null

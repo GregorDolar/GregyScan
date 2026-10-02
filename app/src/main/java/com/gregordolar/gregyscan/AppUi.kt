@@ -183,7 +183,7 @@ private fun dialogContentMaxHeight(): Dp =
     }.coerceAtLeast(180.dp)
 
 @Composable
-internal fun ScanItApp(
+internal fun GregyScanApp(
     state: ScreenState,
     settings: AppSettings,
     language: AppLanguage,
@@ -3543,7 +3543,7 @@ private fun SettingsScreen(
     var settingsError by remember { mutableStateOf<UiMessage?>(null) }
     val context = LocalContext.current
     val uriHandler = LocalUriHandler.current
-    val supportNotice = stringResource(R.string.support_scanit_notice)
+    val supportNotice = stringResource(R.string.support_gregyscan_notice)
     val appVersionName =
         remember(context) {
             try {
@@ -4032,7 +4032,7 @@ private fun SettingsScreen(
                         modifier = Modifier.size(24.dp),
                     )
                     Spacer(Modifier.width(10.dp))
-                    Text(stringResource(R.string.support_scanit))
+                    Text(stringResource(R.string.support_gregyscan))
                 }
             }
             item { Spacer(Modifier.height(8.dp)) }

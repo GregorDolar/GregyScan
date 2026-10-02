@@ -776,8 +776,8 @@ class PureLogicTest {
         assertTrue(build.contains("androidx.core:core-ktx:1.19.0"))
         assertTrue(build.contains("androidx.lifecycle:lifecycle-viewmodel-ktx:2.11.0"))
         assertTrue(build.contains("org.json:json:20260814"))
-        assertTrue(build.contains("seliaScanKeystoreProperties"))
-        assertTrue(build.contains(".android/scanit/keystore.properties"))
+        assertTrue(build.contains("gregyScanKeystoreProperties"))
+        assertTrue(build.contains(".android/gregyscan/keystore.properties"))
         assertTrue(buildTool.contains("Get-BuiltReleaseApk"))
         assertTrue(verifier.contains("ValidateSet(\"internal\", \"github\")"))
         assertTrue(verifier.contains("Assert-ExactUsesPermissions"))
@@ -2734,7 +2734,7 @@ class PureLogicTest {
     fun coldNavigationStartsNonInteractiveUntilCheckpointPolicyResolves() {
         assertEquals(
             ScreenState.Processing(
-                UiMessage(R.string.starting_scanit),
+                UiMessage(R.string.starting_gregyscan),
                 canNavigateBack = false,
             ),
             initialScreenState(null),
